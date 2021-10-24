@@ -1,0 +1,1 @@
+__metadata__ = "{'args': CompilerArgs, 'file_stack': CheckedFileStack, 'fname': PosixPath('src/woma_demo.pyx'), 'app_name': PosixPath('src/woma_demo'), 'project': 'woma_demo', 'module_name': 'src.woma_demo', 'file_c': 'src/woma_demo.c', 'root': PosixPath('src'), 'mode': 'w'}"

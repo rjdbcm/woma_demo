@@ -1,0 +1,13 @@
+(womain(a = /0 -> *; args = [] -> list)) *
+    (!)a
+        InstanceOf(int): branch_a(args) `if we get an int return args`
+        InstanceOf(str): branch_b(args)	`if we get a string return the args in reverse`
+        ...: Undefined(womain, (a, args))
+    <*>a
+
+(branch_a(args = [] -> list)) *
+	<*>args
+
+(branch_b(args= [] -> list)) *
+	<*>list(reversed(args))
+
