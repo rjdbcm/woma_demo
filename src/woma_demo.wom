@@ -1,4 +1,4 @@
-`This is a pretty standard workflow, start with some data, match it to `
+`This is a pretty standard workflow, start with some data, match it to where you want it to go.`
 
 (womain(a = /0 -> *; args = [] -> list)) *
     (!)a
