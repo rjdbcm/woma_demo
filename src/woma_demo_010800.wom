@@ -1,0 +1,18 @@
+`This is a pretty standard workflow, start with some data, match it to where you want it to go.`
+
+(womain(a = /0 -> *; args = [] -> list)) *
+    (!)a
+        InstanceOf(int): branch_a(args)
+        InstanceOf(str): branch_b(args)
+        ...: Undefined(womain, (a, args))
+    <*>a
+
+
+(branch_a(args = [] -> list)) procedure
+    i<@>args
+	    print(i)
+
+(branch_b(args= [] -> list)) procedure
+	i<@>reversed(args)
+	    print(i)
+

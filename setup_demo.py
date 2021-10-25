@@ -1,7 +1,7 @@
 #! /usr/bin/python3
-import subprocess
-import Aspidites
+import os
 import math
+import Aspidites
 
 major, minor, _ = map(int, Aspidites.__version__.split('.'))
 
@@ -19,9 +19,12 @@ vstring = '_' + str(major).rjust(major_pad, '0') + str(minor).rjust(minor_pad, '
 
 
 def main():
-
-    out = subprocess.check_output(['Aspidites', f'src/woma_demo{vstring}.wom', '-o', 'src/woma_demo.pyx', '-c'])
-    print(out.decode('UTF-8'))
+    c = f'Aspidites src/woma_demo{vstring}.wom -o src/woma_demo.pyx -c'
+    with os.popen(c) as p:
+        chunk = p.read(8)
+        while chunk:
+            print(chunk, sep='', end='')
+            chunk = p.read(8)
 
 
 if __name__ == "__main__":
