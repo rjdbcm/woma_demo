@@ -1,0 +1,17 @@
+`This is a pretty standard workflow, start with some data, match it to where you want it to go.`
+
+(womain(a = /0 -> *; args = [] -> list)) *
+    (!)a
+        InstanceOf(int): branch_a(args) `if we get an int return args`
+        InstanceOf(str): branch_b(args)	`if we get a string return the args in reverse`
+        ...: Undefined(womain, (a, args)) `anything else comes back as Undefined`
+    <*>a
+
+(branch_a(args = [] -> list)) list
+    i<@>args
+	    <^>>i
+
+(branch_b(args= [] -> list)) list
+	i<@>reversed(args)
+	    <^>i
+

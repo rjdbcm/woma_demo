@@ -1,4 +1,5 @@
 #! /usr/bin/python3
+from Aspidites import __version__
 
 from woma_demo import womain
 
