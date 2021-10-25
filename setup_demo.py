@@ -1,9 +1,9 @@
 #! /usr/bin/python3
 import subprocess
-from Aspidites import __version__
+import Aspidites
 import math
 
-major, minor, _ = map(int, __version__.split('.'))
+major, minor, _ = map(int, Aspidites.__version__.split('.'))
 
 if major == 0:
     major_pad = 1

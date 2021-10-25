@@ -2,16 +2,19 @@
 
 (womain(a = /0 -> *; args = [] -> list)) *
     (!)a
-        InstanceOf(int): branch_a(args) `if we get an int return args`
-        InstanceOf(str): branch_b(args)	`if we get a string return the args in reverse`
-        ...: Undefined(womain, (a, args)) `anything else comes back as Undefined`
+        InstanceOf(int): branch_a(args)
+        InstanceOf(str): branch_b(args)
+        ...: Undefined(womain, (a, args))
     <*>a
 
+(identity(x = /0 -> *)) *
+    <^>x
+
 (branch_a(args = [] -> list)) list
-    i<@>args
-	    <^>>i
+    i<@>identity(args)
+	    identity(i)
 
 (branch_b(args= [] -> list)) list
-	i<@>reversed(args)
-	    <^>i
+	i<@>identity(args)
+	    identity(reversed(args))
 
